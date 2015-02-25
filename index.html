@@ -1,126 +1,280 @@
-<!doctype html>
-<html lang="en" class="no-js">
+<!DOCTYPE html>
+<html lang="pl">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>PHPers FAQ</title>
 
-	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&amp;p;subset=latin,latin-ext'
+          rel='stylesheet' type='text/css'>
 
-	<link rel="stylesheet" href="css/reset.css"> <!-- CSS reset -->
-	<link rel="stylesheet" href="css/style.css"> <!-- Resource style -->
-	<script src="js/modernizr.js"></script> <!-- Modernizr -->
-	<title>PHPers FAQ</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://getbootstrap.com/assets/css/docs.min.css">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
 </head>
 <body>
-<header>
-	<h1>PHPers FAQ</h1>
+<header class="php-header container-fluid">
+    <div class="row ">
+        <div class="col-xs-4 text-center">
+            <img src="http://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/F_icon.svg/2000px-F_icon.svg.png"
+                 alt="@PHPers - Facebook" class="img-thumbnail img-responsive" width="120" height="120">
+
+            <h2><a href="https://www.facebook.com/groups/223889134481096/" target="_blank">PHPers</a></h2>
+
+        </div>
+        <div class="col-xs-4  text-center">
+            <img src="https://pbs.twimg.com/profile_images/437528399100129280/Mj6q3Wm_.png"
+                 class="img-thumbnail img-responsive" width="120" height="120">
+
+            <h2>PHPers FAQ</h2></div>
+        <div class="col-xs-4 text-center">
+            <img src="http://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/F_icon.svg/2000px-F_icon.svg.png"
+                 alt="@PHPers - Facebook" class="img-thumbnail img-responsive" width="120" height="120">
+
+            <h2><a href="https://www.facebook.com/groups/336186653256637/" target="_blank">PHPers: Pierwsze Kroki</a>
+            </h2>
+
+        </div>
+    </div>
+
 </header>
-<section class="cd-faq">
-	<ul class="cd-faq-categories">
-		<li><a class="selected" href="#podstawy">Podstawy</a></li>
-		<li><a href="#narzedzia">Narzędzia</a></li>
-		<li><a href="#zasoby">Zasoby</a></li>
-	</ul> <!-- cd-faq-categories -->
 
-	<div class="cd-faq-items">
-		<ul id="podstawy" class="cd-faq-group">
-			<li class="cd-faq-title"><h2>Podstawy</h2></li>
-			<li>
-				<a class="cd-faq-trigger" href="#0">Gdzie mogę się nauczyć PHP?</a>
-				<div class="cd-faq-content">
-					<p>
-						Podstawowym źródłem informacji o PHP jest oficjalny podręcznik: <a href="http://php.net/manual/en/index.php">http://php.net/manual/en/index.php</a>. Znajdują się tam elementarne informacje
-						o tym języku programowania, a także dokładny opis wszystkich funkcji biblioteki standardowej.
-					</p>
-					<p>
-						Oficjalny podręcznik to bardzo dobra baza wiedzy, ale dla osoby, która wcześniej nie programowała,
-						zwłaszcza w środowisku webowym, ciężko traktować to jako materiał do nauki. W Internecie można
-						znaleźć wiele kursów, także w języku polskim. Adresy poda z chęcią zawsze pomocny Google.
-					<p>
-						Dostępne są także kursy stacjonarne, tu także pomoże Google.
-					</p>
-				</div> <!-- cd-faq-content -->
-			</li>
+<nav class="navbar navbar-default navbar-static-top">
+    <div class="container">
+        <div class="navbar-header">
 
-			<li>
-				<a class="cd-faq-trigger" href="#0">Podstawy już znam, co dalej?</a>
-				<div class="cd-faq-content">
-					<p>
-						Na pewno zainteresuj się stroną <a href="http://www.phptherightway.com/">PHP: The Right Way</a>
-						(dostępna także w języku polskim). Jest tam zbiór dobrych praktyk, które powinien znać każdy
-						programista PHP.
-					</p>
-					<p>
-						Aby nie wymyślać koła na nowo, warto zapoznać się z typowymi
-						<a href="https://github.com/domnikl/DesignPatternsPHP">wzorcami projektowanymi</a>
-						z przykładami w PHP.
-					</p>
-				</div> <!-- cd-faq-content -->
-			</li>
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                    aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Zwiń / Rozwiń Nawigacje</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
 
-			<li>
-				<a class="cd-faq-trigger" href="#0">Jakie książki powinienem przeczytać?</a>
-				<div class="cd-faq-content">
-					<p>
-						Warto jest przeczytać książki autorstwa Roberta C. Martina (znanego także jako "Uncle Bob"):
-						"Czysty Kod. Podręcznik dobrego programisty" (Clean Code: A Handbook of Agile Software Craftsmanship) i
-						"Mistrz Czystego Kodu. Kodeks postępowania profesjonalnych programistów" ("The Clean Coder: A Code of
-						Conduct for Professional Programmers"). Pierwsza to elementarz dla każdego programisty, tworzącego
-						w dowolnym języku programowania, a druga to historia rozwoju osobistego programisty. Obie książki dostępne
-						są na polskim rynku, wydane nakładem wydawnictwa Helion. Podstawową wiedzę o programowaniu obiektowym,
-						projektowania aplikacji, narzędziach i wzorcach projektowych w PHP możesz zdobyć czytając inną pozycję wydaną
-						w Polsce przez Helion - "PHP. Obiekty, wzorce, narzędzia" ("PHP Objects, Patterns, and Practice") napisaną przez Matt Zandstra.
-					</p>
-				</div> <!-- cd-faq-content -->
-			</li>
-		</ul> <!-- cd-faq-group -->
+            <a class="navbar-brand">Działy:</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse ">
 
-		<ul id="narzedzia" class="cd-faq-group">
-			<li class="cd-faq-title"><h2>Narzędzia</h2></li>
-			<li>
-				<a class="cd-faq-trigger" href="#0">Jaki polecacie edytor/IDE?</a>
-				<div class="cd-faq-content">
-					<p>
-						Szeroko polecanym środowiskiem programowania (IDE) stosowanym do tworzenia aplikacji w PHP jest PHPStorm
-						firmy JetBrains. Wada - jest to środowisko płatne (dla indywidualnego programisty - 99Eur, aczkolwiek jest
-						sporo zniżek - szczegóły na stronie internetowej twórców). Twórcom aplikacji wykorzystujących Zend
-						Framework polecane jest środowisko Zend Studio - także komercyjne; Zend Studio jest to środowisko Eclipse
-						z dodatkami ułatwiającymi programowanie w ZF, ale nie tylko - naprawia sporo bolączek "gołego" Eclipse.
-					</p>
-					<p>
-						Z darmowych, kompletnych IDE polecane jest szczególnie NetBeans, a także wspomniane wcześniej Eclipse.
-					</p>
-					<p>
-						Wszystkie wymienione wyżej aplikacje dostępne są na podstawowe platformy: Windows, Linux i Mac OS X.
-					</p>
-					<p>
-						Oprócz IDE, wiele osób stosuje edytory programistyczne. Nie mają one wielu opcji dostępnych w IDE, ale
-						dużo mniej obciążają komputer programisty. Te edytory to między innymi Sublime Text (wszystkie platformy,
-						shareware), TextMate (Mac OSX, darmowy), Atom (wszystkie platformy, darmowy), Notepad++
-						(Windows, darmowy), a także wiele innych.
-					</p>
-				</div> <!-- cd-faq-content -->
-			</li>
-		</ul> <!-- cd-faq-group -->
+            <ul class="nav navbar-nav">
+                <li><a href="#podstawy">Podstawy</a></li>
+                <li><a href="#narzedzia">Narzędzia</a></li>
+                <li><a href="#zasoby">Zasoby</a></li>
+            </ul>
+        </div>
+        <!--/.nav-collapse -->
+    </div>
+    <!--/.container-fluid -->
+</nav>
 
-	<ul id="zasoby" class="cd-faq-group">
-		<li class="cd-faq-title"><h2>Zasoby</h2></li>
-		<li>
-			<a class="cd-faq-trigger" href="#0">Gdzie znajdę bibliotekę do (...)?</a>
-			<div class="cd-faq-content">
-				<p>
-					Do PHP zostało stworzonych wiele bibliotek i narzędzi. Rozbudowaną listę gotowych projektów i bibliotek
-					możesz znaleźć tutaj: <a href="https://github.com/ziadoz/awesome-php">https://github.com/ziadoz/awesome-php</a>.
-				</p>
-			</div> <!-- cd-faq-content -->
-		</li>
-	</ul> <!-- cd-faq-group -->
-</div> <!-- cd-faq-items -->
+<section id="all">
 
-	<a href="#0" class="cd-close-panel">Zamknij</a>
-</section> <!-- cd-faq -->
-<script src="js/jquery-2.1.1.js"></script>
-<script src="js/jquery.mobile.custom.min.js"></script>
-<script src="js/main.js"></script> <!-- Resource jQuery -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9">
+                <div class="bs-docs-section">
+                    <h2 id="podstawy"> Podstawy</h2>
+                    <hr>
+                    <h3 id="podstawy-1">"Gdzie mogę się nauczyć PHP?"</h3>
+
+                    <p class="text-center "><a href="http://php.net/docs.php"> <img
+                            src="http://php.net/manual/en/images/c0d23d2d6769e53e24a1b3136c064577-php_logo.png"
+                            height="83"> <br> Podręcznik PHP</a></p>
+
+                    <p class="lead">
+                        Podstawowym źródłem informacji o PHP jest oficjalny podręcznik. Znajdują się tam elementarne
+                        informacje
+                        o tym języku programowania, a także dokładny opis wszystkich funkcji biblioteki standardowej.
+                    </p>
+
+                    <p class="lead">
+                        Oficjalny podręcznik to bardzo dobra baza wiedzy, ale dla osoby, która wcześniej nie
+                        programowała,
+                        zwłaszcza w środowisku webowym, ciężko traktować to jako materiał do nauki. W Internecie można
+                        znaleźć wiele kursów, także w języku polskim. Adresy poda z chęcią zawsze pomocny Google.
+
+                    <p class="lead">
+                        Dostępne są także kursy stacjonarne, tu także pomoże Google.
+                    </p>
+
+                    <p>&nbsp;</p>
+                    <hr>
+                    <p>&nbsp;</p>
+
+                    <h3 id="podstawy-2">"Podstawy już znam, co dalej?"</h3>
+
+                    <p class="text-center "><a href="http://www.phptherightway.com/"> <img
+                            src="http://www.phptherightway.com/images/og-logo.png" height="150"> <br> PHP: The Right Way</a>
+                    </p>
+
+                    <p class="lead text-justify">
+                        Na pewno zainteresuj się tą stroną (dostępna także w języku polskim).
+                        Jest tam zbiór dobrych praktyk, które powinien znać każdy
+                        programista PHP.
+                    </p>
+
+                    <p class="lead text-justify">
+                        Aby nie wymyślać koła na nowo, warto zapoznać się z typowymi
+                        <a href="https://github.com/domnikl/DesignPatternsPHP">wzorcami projektowanymi</a>
+                        z przykładami w PHP.
+                    </p>
+
+                    <p>&nbsp;</p>
+                    <hr>
+                    <p>&nbsp;</p>
+
+                    <h3 id="podstawy-3">"Jakie książki powinienem przeczytać?"</h3>
+
+                    <p>&nbsp;</p>
+                    <ol>
+                        <li class="lead"><strong>"Czysty Kod. Podręcznik dobrego programisty" - Roberta C.
+                            Martina</strong></li>
+                        <li class="lead"><strong>"Mistrz Czystego Kodu. Kodeks postępowania profesjonalnych
+                            programistów" - Roberta C. Martina</strong></li>
+                        <li class="lead"><strong>"PHP. Obiekty, wzorce, narzędzia" - Matt Zandstra</strong></li>
+                    </ol>
+                    <p class="lead text-justify">
+                        Pierwsza to elementarz dla każdego programisty, tworzącego
+                        w dowolnym języku programowania, a druga to historia rozwoju osobistego programisty. Obie
+                        książki dostępne
+                        są na polskim rynku, wydane nakładem wydawnictwa Helion. Podstawową wiedzę o programowaniu
+                        obiektowym,
+                        projektowania aplikacji, narzędziach i wzorcach projektowych w PHP możesz zdobyć czytając
+                        trzecią pozycję wydaną
+                        w Polsce przez Helion.
+                    </p>
+
+
+                    <p>&nbsp;</p>
+
+                    <p>&nbsp;</p>
+                </div>
+                <!--koniec podstaw -->
+
+                <div class="bs-docs-section">
+                    <h2 id="narzedzia">Narzędzia</h2>
+                    <hr>
+                    <h3 id="narzedzia-1">"Jaki polecacie edytor/IDE?"</h3>
+
+                    <p class="lead text-justify">
+                        Szeroko polecanym środowiskiem programowania (IDE) stosowanym do tworzenia aplikacji w PHP jest
+                        PHPStorm
+                        firmy JetBrains. Wada - jest to środowisko płatne (dla indywidualnego programisty - 99Eur,
+                        aczkolwiek jest
+                        sporo zniżek - szczegóły na stronie internetowej twórców). Twórcom aplikacji wykorzystujących
+                        Zend
+                        Framework polecane jest środowisko Zend Studio - także komercyjne; Zend Studio jest to
+                        środowisko Eclipse
+                        z dodatkami ułatwiającymi programowanie w ZF, ale nie tylko - naprawia sporo bolączek "gołego"
+                        Eclipse.
+                    </p>
+
+                    <p class="lead text-justify">
+                        Z darmowych, kompletnych IDE polecane jest szczególnie NetBeans, a także wspomniane wcześniej
+                        Eclipse.
+                    </p>
+
+                    <p class="lead text-justify">
+                        Wszystkie wymienione wyżej aplikacje dostępne są na podstawowe platformy: Windows, Linux i Mac
+                        OS X.
+                    </p>
+
+                    <p class="lead text-justify">
+                        Oprócz IDE, wiele osób stosuje edytory programistyczne. Nie mają one wielu opcji dostępnych w
+                        IDE, ale
+                        dużo mniej obciążają komputer programisty. Te edytory to między innymi Sublime Text (wszystkie
+                        platformy,
+                        shareware), TextMate (Mac OSX, darmowy), Atom (wszystkie platformy, darmowy), Notepad++
+                        (Windows, darmowy), a także wiele innych.
+                    </p>
+
+
+                    <p>&nbsp;</p>
+
+                    <p>&nbsp;</p>
+                </div>
+                <!-- koniec narzędzi -->
+
+                <div class="bs-docs-section">
+                    <h2 id="zasoby">Narzędzia</h2>
+                    <hr>
+                    <h3 id="zasoby-1">"Gdzie znajdę bibliotekę do (...)?"</h3>
+
+                    <p class="lead  text-justify">
+                        Do PHP zostało stworzonych wiele bibliotek i narzędzi. Rozbudowaną listę gotowych projektów i
+                        bibliotek
+                        możesz znaleźć tutaj: <a href="https://github.com/ziadoz/awesome-php">https://github.com/ziadoz/awesome-php</a>.
+                    </p>
+
+
+                    <p>&nbsp;</p>
+
+                    <p>&nbsp;</p>
+                </div>
+                <!-- koniec zasobow  -->
+            </div>
+            <!-- .col-md-9 -->
+
+
+            <div class="col-md-3">
+
+                <nav class=" bs-docs-sidebar hidden-print hidden-xs hidden-sm affix-top ">
+                    <ul id="sidebar" class="nav bs-docs-sidenav ">
+                        <li><a href="#podstawy">Podstawy</a>
+                            <ul class="nav">
+                                <li><a href="#podstawy-1">Gdzie mogę się nauczyć PHP?</a></li>
+                                <li><a href="#podstawy-2">Podstawy już znam, co dalej?</a></li>
+                                <li><a href="#podstawy-3">Jakie książki powinienem przeczytać?</a></li>
+                            </ul>
+                        </li>
+
+                        <li><a href="#narzedzia">Narzędzia</a>
+                            <ul class="nav">
+                                <li><a href="#narzedzia-1">Jaki polecacie edytor/IDE?</a></li>
+                            </ul>
+                        </li>
+
+                        <li><a href="#zasoby">Zasoby</a>
+                            <ul class="nav">
+                                <li><a href="#zasoby-1">Gdzie znajdę bibliotekę do (...)?</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+
+
+            </div>
+            <!-- .col-md-3 -->
+
+
+        </div>
+        <!-- .row -->
+    </div>
+    <!-- .container -->
+
+</section>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+<script>
+
+    $('body').scrollspy({
+        target: '.bs-docs-sidebar',
+        offset: 100
+    });
+
+</script>
 </body>
 </html>
