@@ -380,4 +380,15 @@ header {
     .no-js .cd-faq-content {
       display: block; } }
 
+#frameworki ol {
+  list-style-type: decimal;
+  padding: inherit;
+  color: #6c7d8e;
+  text-align: justify; }
+  #frameworki ol li {
+    padding-left: inherit;
+    padding-bottom: 0px;
+    line-height: 2;
+    margin-bottom: 1em; }
+
 /*# sourceMappingURL=style.css.map */
