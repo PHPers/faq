@@ -145,7 +145,7 @@
                                 		<li>Alternatywą dla Dependency Injection są <a href="http://laravel.com/docs/5.1/facades">Fasady</a>. Ich nadużywanie prowadzi do sytuacji, w której trudno jest określić zależności danej klasy. Planowane jest wprowadzenie funkcjonalności pozwalającej na <a href="http://laravel.com/docs/master/blade#service-injection">dostęp do serwisów z poziomu template'ów.</a></li>
                                         <li>Ze względu na Fasady w <a href="https://github.com/laravel/framework/blob/v5.0.32/src/Illuminate/Support/Facades/Facade.php#L42">produkcyjnym kodzie</a> znajdują się metody służące wyłącznie testowaniu.</li>
                                         <li>Zapisywanie obiektu do bazy realizowane jest za pomocą <a href="https://github.com/laravel/framework/blob/v5.0.32/src/Illuminate/Database/Eloquent/Model.php#L1185">statycznej metody save()</a>, której mockowanie w testach jednostkowych jest mocno utrudnione.</li>
-                                        <li>Przykładem nadużywanie statycznego dostępu jest klasa odpowiedzialna za <a href="https://github.com/laravel/framework/blob/v5.0.32/src/Illuminate/Support/Str.php">operacje na ciągach znaków</a>.</li>
+                                        <li>Przykładem nadużywania statycznego dostępu jest klasa odpowiedzialna za <a href="https://github.com/laravel/framework/blob/v5.0.32/src/Illuminate/Support/Str.php">operacje na ciągach znaków</a>.</li>
                                 </ol>
                                 <p>Metody magiczne:</p>
                                 <ol>
