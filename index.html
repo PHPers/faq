@@ -20,6 +20,7 @@
 		<li><a class="selected" href="#podstawy">Podstawy</a></li>
 		<li><a href="#narzedzia">Narzędzia</a></li>
 		<li><a href="#zasoby">Zasoby</a></li>
+		<li><a href="#frameworki">Frameworki</a></li>
 	</ul> <!-- cd-faq-categories -->
 
 	<div class="cd-faq-items">
@@ -130,51 +131,28 @@
         <ul id="frameworki" class="cd-faq-group">
                 <li class="cd-faq-title"><h2>Frameworki</h2></li>
                 <li>
-                        <a class="cd-faq-trigger" href="#0">Dlaczego hejtujemy Laravela?</a>
+                        <a class="cd-faq-trigger" href="#0">Laravel</a>
                         <div class="cd-faq-content">
-                                <p>
-                                        Ja, piszący te słowa, pracowałem przez dwa miesiące z Laravelem i moja do niego niechęć nie opiera się na zawiści wobec Taylora Otwella.
-                                </p>
-                                <p>
-                                        Laravel używa biblioteki o nazwie Eloquent, która ma być ORM, a tak naprawdę jest to Active Record. Doświadczenia z Eloquentem mam następujące:
-                                        </p>
-                                        <ol>
-                                                <li>Z niezrozumiałych dla mnie przyczyn dostępne są dwa query buildery: użycie <a href="https://github.com/laravel/framework/blob/v5.0.32/src/Illuminate/Database/Eloquent/Builder.php">pierwszego z nich</a> powoduje zwrócenie obiektów AR, natomiast <a href="https://github.com/laravel/framework/blob/v5.0.32/src/Illuminate/Database/Query/Builder.php">drugi</a> zwraca tablice. Jeśli bliżej przyjrzycie się budowie Eloquent\Builder, to zauważycie, że Query\Builder jest do niego wstrzyknięty, a magiczna metoda __call() powoduje wywoływanie metod nieistniejących w Eloquent\Builder na Query\Builder. Miłego debugowania.</li>
-                                                <li>Jeśli używasz Eloquent\Builder, to raczej wcześniej niż później będziesz klasę rozszerzał tak, by umożliwiała np. filtrowanie po doJOINowanych tabelach. Bo przecież będziesz oczekiwał, że zwróci ona obiekt AR, a nie tablicę. Prawda? <a href="https://www.facebook.com/groups/laravelpolska/permalink/1587069624864733/">Dyskusja</a>.</li>
-                                                <li>Wołając na obiekcie AR metodę <a href="https://github.com/laravel/framework/blob/v5.0.32/src/Illuminate/Database/Eloquent/Model.php#L1460">save()</a> jesteśmy dość kulturalnie informowani o tym, że operacja się nie powiodła. Używając metody <a href="https://github.com/laravel/framework/blob/v5.0.32/src/Illuminate/Database/Eloquent/Model.php#L525">create()</a> jesteśmy informowani nieco mniej kulturalnie (<a href="https://github.com/laravel/framework/blob/v5.0.32/src/Illuminate/Database/Eloquent/Model.php#L175">ale za to publicznie</a>). Gorzej, że niepowodzenie w żadnym z tych przypadków nie spowoduje przerwania transakcji (bo jej tam zwyczajnie nie ma, bez względu na to jaka baza jest pod spodem). Nieco nieaktualna - bo na temat wersji 4 - <a href="https://www.facebook.com/groups/223889134481096/permalink/336420516561290/">dyskusja</a>.</li>
-                                        </ol>
-                                <p>
-                                        Stanowczo nadużywane jest słowo kluczowe static:
-                                </p>
-                                        <ol>
-
-                                                <li>Fasady. Dostęp statyczny, to niestety jest zło. Oczywiście można sobie z nim poradzić i nadal pisać testy! Pod warunkiem, że w <a href="https://github.com/laravel/framework/blob/v5.0.32/src/Illuminate/Support/Facades/Facade.php">produkcyjnym kodzie</a> znajdą się metody służące wyłącznie testowaniu</li>
-                                                <li>Dependency Injection kontra Fasady - w Laravelu znajduje się dość sensowny moduł odpowiedzialny za DI. Nie mam do niego zastrzeżeń, naprawdę. W większości przypadków programiści korzystają z nieszczęsnych fasad, które powodują, że: DI zastępujemy Service Locatorem i nie mamy bladego pojęcia o tym jakie są prawdziwe zależności naszej klasy.</li>
-                                                <li>Do zapisywania obiektu AR do bazy służy, a jakże, <a href="https://github.com/laravel/framework/blob/v5.0.32/src/Illuminate/Database/Eloquent/Model.php#L1185">statyczna metoda save()</a>. Teraz idź córko (bądź synu) i napiszże test do fragmentu kodu, który tworzy obiekt AR i zapisuje go do bazy. Miłego moczenia statyków...</li>
-                                                <li>Statyków jest więcej. Bo przecież klasa wykonująca <a href="https://github.com/laravel/framework/blob/v5.0.32/src/Illuminate/Support/Str.php">operacje na ciągach znaków</a> jest tylko kontenerem do przechowywania funkcji.</li>
-                                        </ol>
-                                <p>
-                                        Nadużywanie metod magicznych:
-                                </p>
-                                        <ol>
-                                                <li>Wspomniane wyżej połączenie dwóch query builderów.</li>
-                                                <li><a href="https://github.com/laravel/framework/blob/v5.0.32/src/Illuminate/Auth/AuthManager.php">AuthManager</a> również pozwala nam wykonywać <a href="https://github.com/laravel/framework/blob/v5.0.32/src/Illuminate/Support/Manager.php#L137">zgoła nieoczekiwane operacje</a> na <a href="http://laravel.com/docs/5.0/authentication#retrieving-the-authenticated-user">obiektach</a>, o których nie mamy większego pojęcia. <a href="">Dyskusja</a> (dotyczyła wersji 4.2, ale wygląda na to, że nadal jest aktualna)</li>
-                                                <li>Mockowanie tych szalonych zależności wymaga intensywnego korzystania z xdebuga.</li>
-
-                                        </ol>
-                                <p>
-                                        Występują też w przyrodzie zjawiska, których po prostu nie rozumiem:
-                                </p>
-                                        <ol>
-                                                <li>Packagist laravelish enough is not! W związku z czym istenieje <a href="http://packalyst.com/">Packalyst</a></li>
-                                        </ol>
-                                <p>
-                                Dlaczego w takim razie ktoś w ogóle używa Laravela? Z bardzo prostej przyczyny - Otwell zapewnia projektowi fenomenalny wręcz marketing, próg wejścia jest w zasadzie zerowy (najwyżej opakujesz kod proceduralny w statyczne metody), a do tego czas nas czasem goni... Co zrobić? Jak żyć? Nie używać Laravela do żadnych projektów, które potem będą musiały być przez dłuższy czas utrzymywane. Twoim celem jest zwiększenie sprzedaży piwa marki X w wakacje, wśród studentów? Zastanów się nad tym, czy nie byłoby warto użyć <a href="http://silex.sensiolabs.org/">Silexa</a> albo <a href="http://www.slimframework.com/">Slima</a>, a jeśli nie chcesz bądź po prostu musisz - to piszże w Laravelu.<br>
-                                Nigdy, przenigdy, nie używaj Laravela do projektów, które będą miały być utrzymywane przez wiele lat. Słaba architektura Cię wykończy zanim zdąży Cię wykończyć brak dobrych testów jednostkowych.
-                                </p>
-                                <p>
-                                        Na koniec niestety przypomniałem sobie, że <a href="https://github.com/laravel/framework/pull/4824">korzystanie z DI</a> też potrafi skrócić życie. Bardzo długo szukałem w kodzie PHPowym zmiennej $driver przekazywanej do konstruktora, a ona sobie spokojnie żyła <a href="https://devel-m6w6.rhcloud.com/mdref/http/Client/__construct">w C</a>.
-                                </p>
+                                <p>Eloquent (dostęp do bazy danych):</p>
+                                <ol>
+                                        <li>Dostępne są dwa query buildery: użycie <a href="https://github.com/laravel/framework/blob/v5.0.32/src/Illuminate/Database/Eloquent/Builder.php">pierwszego z nich</a> powoduje zwrócenie obiektów Active Record, natomiast <a href="https://github.com/laravel/framework/blob/v5.0.32/src/Illuminate/Database/Query/Builder.php">drugi</a> zwraca tablice.</li>
+                                        <li>Eloquent\Builder nie pozwala na filtrowanie wyników zapytania po wartościach z JOINowanych tabel i zwrócenie instancji modelu jednocześnie. <a href="https://www.facebook.com/groups/laravelpolska/permalink/1587069624864733/">Dyskusja</a>.</li>
+                                        <li>Wołając na obiekcie AR metodę <a href="https://github.com/laravel/framework/blob/v5.0.32/src/Illuminate/Database/Eloquent/Model.php#L1460">save()</a> zwrócona wartość pozwoli nam ustalić czy operacja się powiodła. Używając metody <a href="https://github.com/laravel/framework/blob/v5.0.32/src/Illuminate/Database/Eloquent/Model.php#L525">create()</a> powyższej informacji dostaczy nam <a href="https://github.com/laravel/framework/blob/v5.0.32/src/Illuminate/Database/Eloquent/Model.php#L175">publiczna właściwość klasy modelu</a>. W żadnym z powyższych wypadków nie zostanie automatycznie przerwana transakcja. <a href="https://www.facebook.com/groups/223889134481096/permalink/336420516561290/">Dyskusja</a>.</li>
+                                </ol>
+                                <p>Dostęp statyczny:</p>
+                                <ol>
+                                		<li>W Laravelu dostępny jest moduł Dependency Injection oparty o Reflection i <a href="http://laravel.com/docs/5.1/container#resolving">mogący działać bez żadnej konfiguracji</a>. Znajdowały się w nim pewne <a href="https://github.com/laravel/framework/pull/4824">niedoskonałości</a> mogące skutecznie utrudnić debugowanie.</li>
+                                		<li>Alternatywą dla Dependency Injection są <a href="http://laravel.com/docs/5.1/facades">Fasady</a>. Ich nadużywanie prowadzi do sytuacji, w której trudno jest określić zależności danej klasy. Planowane jest wprowadzenie funkcjonalności pozwalającej na <a href="http://laravel.com/docs/master/blade#service-injection">dostęp do serwisów z poziomu template'ów.</a></li>
+                                        <li>Ze względu na Fasady w <a href="https://github.com/laravel/framework/blob/v5.0.32/src/Illuminate/Support/Facades/Facade.php#L42">produkcyjnym kodzie</a> znajdują się metody służące wyłącznie testowaniu.</li>
+                                        <li>Zapisywanie obiektu do bazy realizowane jest za pomocą <a href="https://github.com/laravel/framework/blob/v5.0.32/src/Illuminate/Database/Eloquent/Model.php#L1185">statycznej metody save()</a>, której mockowanie w testach jednostkowych jest mocno utrudnione.</li>
+                                        <li>Przykładem nadużywanie statycznego dostępu jest klasa odpowiedzialna za <a href="https://github.com/laravel/framework/blob/v5.0.32/src/Illuminate/Support/Str.php">operacje na ciągach znaków</a>.</li>
+                                </ol>
+                                <p>Metody magiczne:</p>
+                                <ol>
+                                        <li><a href="https://github.com/laravel/framework/blob/v5.0.32/src/Illuminate/Database/Eloquent/Builder.php">Eloquent\Builder</a> nie dziedziczy po <a href="https://github.com/laravel/framework/blob/v5.0.32/src/Illuminate/Database/Query/Builder.php">Query\Builder</a>. W zamian  metoda <a href="https://github.com/laravel/framework/blob/v5.0.32/src/Illuminate/Database/Eloquent/Builder.php#L920">__call()</a> powoduje wywoływanie metod nieistniejących w Eloquent\Builder na <a href="https://github.com/laravel/framework/blob/v5.0.32/src/Illuminate/Database/Eloquent/Builder.php#L17">właściwości</a> tej klasy będącej instancją Query\Builder.</li>
+                                        <li>W podobny sposób działa <a href="https://github.com/laravel/framework/blob/v5.0.32/src/Illuminate/Auth/AuthManager.php">AuthManager</a>, który pozwala niejawnie <a href="https://github.com/laravel/framework/blob/v5.0.32/src/Illuminate/Support/Manager.php#L137">wykonywać</a> dzialanie na <a href="http://laravel.com/docs/5.0/authentication#retrieving-the-authenticated-user">klasie</a>, której instancja jest elementem <a href="https://github.com/laravel/framework/blob/v5.0.32/src/Illuminate/Support/Manager.php#L27">tablicy</a> będącej jego właściwością. <a href="">Dyskusja</a></li>
+                                        <li>Opisane powyżej podejście znacznie utrudnia debugowanie i zrozumienie wewnętrznych mechanizmów frameworka.</li>
+                                </ol>
                         </div>
                 </li>
         </ul> <!-- cd-faq-group -->
